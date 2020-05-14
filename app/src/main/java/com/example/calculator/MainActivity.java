@@ -152,29 +152,29 @@ public class MainActivity extends AppCompatActivity {
         button_equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int sum = 0;
+                long sum = 0;
                 secondParameter = numbers.getText().toString();
                 switch (operation){
                     case "plus":
-                        sum = Integer.parseInt(firstParameter) + Integer.parseInt(secondParameter);
+                        sum = Long.parseLong(firstParameter) + Long.parseLong(secondParameter);
                         break;
                     case "minus":
-                        sum = Integer.parseInt(firstParameter) - Integer.parseInt(secondParameter);
+                        sum = Long.parseLong(firstParameter) - Long.parseLong(secondParameter);
                         break;
                     case "multi":
-                        sum = Integer.parseInt(firstParameter) * Integer.parseInt(secondParameter);
+                        sum = Long.parseLong(firstParameter) * Long.parseLong(secondParameter);
                         break;
                     case "div":
                         if(secondParameter.equals("0")) {
                             numbers.setText("ERR");
                         } else {
-                            sum = Integer.parseInt(firstParameter) / Integer.parseInt(secondParameter);
+                            sum = Long.parseLong(firstParameter) / Long.parseLong(secondParameter);
                         }
                         break;
                     default:
                         break;
                 }
-                numbers.setText(Integer.toString(sum));
+                numbers.setText(Long.toString(sum));
             }
         });
     }
